@@ -1,0 +1,61 @@
+$primary: #F9E0AE;
+$secondary: #FAF2DA;
+$success: #C24914;
+$light: #FC8621;
+$dark: #682C0E;
+@keyframes WHITEPULSE {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255,255,255, 0.9);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 82, 82, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
+  }
+}
+@keyframes REDPULSE {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 82, 82, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
+  }
+}
+@mixin primary-style-button {
+  color: white;
+  background-image: linear-gradient(to bottom, red, $success);
+  box-shadow: 0 0 0 0 red;
+  animation: REDPULSE 2s infinite;
+  border: none;
+
+  &:active,
+  &:checked,
+  &:focus,
+  &:hover {
+    @extend .btn-primary;
+    opacity: 0.7;
+  }
+}
+@mixin secondary-style-button {
+  color: black;
+  background-image: linear-gradient(to bottom, white, $secondary);
+  box-shadow: 0 0 0 0 white;
+  animation: WHITEPULSE 2s infinite;
+  border: none;
+
+  &:active,
+  &:checked,
+  &:focus,
+  &:hover {
+    @extend .btn-secondary;
+    opacity: 0.7;
+  }
+}

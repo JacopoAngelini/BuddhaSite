@@ -1,0 +1,15 @@
+@import 'variables';
+$bgcolor: white;
+$color: white;
+@function color-txtfrom-bg ($bgcolor) {
+  @if(lightness($bgcolor) > 50) {
+    @return $dark;
+  } @else {
+    @return white;
+  }
+}
+
+@mixin use-color-txtfrom-bg($color){
+    background-color: $color;
+    color: color-txtfrom-bg($color);
+}

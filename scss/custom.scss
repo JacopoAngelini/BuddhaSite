@@ -1,0 +1,42 @@
+@import 'variables';
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import 'function';
+
+
+.btn-primary {
+  @include primary-style-button;
+
+}
+
+.btn-secondary {
+  @include secondary-style-button;
+}
+
+h1{
+  font-family: 'Island Moments';
+}
+
+h2,h3{
+  font-family: 'Amatic SC';
+}
+
+.primopiano{
+  background-image: url("../img/primopiano.jpg");
+  height: 105vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.cards, .Partnerships{
+  padding: 20vh 0 20vh 0;
+}
+
+.card{
+  border: 0.5px solid  $dark;
+}
+.card-footer{
+  background-color: $dark;
+  @extend .pb-3
+}
+footer, footer a{
+  @include use-color-txtfrom-bg(black);
+}
